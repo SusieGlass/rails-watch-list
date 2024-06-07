@@ -3,6 +3,7 @@ class ListsController < ApplicationController
 
   # GET /lists or /lists.json
   def index
+    @list = List.new
     @lists = List.all
   end
 
@@ -22,6 +23,7 @@ class ListsController < ApplicationController
 
   # POST /lists or /lists.json
   def create
+
     @list = List.new(list_params)
 
     respond_to do |format|
@@ -59,8 +61,8 @@ class ListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_list
+      # Use callbacks to share common setup or constraints between actions.
+  def set_list
       @list = List.find(params[:id])
     end
 

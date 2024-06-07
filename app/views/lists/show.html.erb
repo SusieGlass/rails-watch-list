@@ -3,6 +3,7 @@
 <%= render @list %>
 
 <div>
+<%= link_to "New list", new_list_path %> |
   <%= link_to "Edit this list", edit_list_path(@list) %> |
   <%= link_to "Back to lists", lists_path %>
 
@@ -13,5 +14,7 @@
 
   <%= f.label :comment %>
   <%= f.text_field :comment%>
+  <%= f.label 'movie' %>
+  <%= f.input :movie_id, collection: Movie.all %>
   <%= f.submit %>
 <% end %>
